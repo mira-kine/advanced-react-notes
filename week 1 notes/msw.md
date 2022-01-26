@@ -21,6 +21,9 @@
 6. return your response that takes your mock json object as argument
    - for ex res(ctx.json(mockResponse))
      -when you console log your fetch call, the object you receive is what you want to mimic in your .json() in your msw. You can also use postman or look in the network tab to get your data - for ex: const mockResponse = [{id: 1, pokemon: pikachu}]
+7. put a **beforeAll(() => {})** and **afterAll(() => {})** before the actual test
+   - beforeAll(() => server.listen()) runs before all tests
+   - afterAll(() => server.close()) runs after all tests
 
 ### MSW code example
 
