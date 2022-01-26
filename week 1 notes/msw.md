@@ -1,32 +1,31 @@
-## Lecture 1.26.2022 - Mock Service Worker (MSW)
+# Lecture 1.26.2022 - Mock Service Worker (MSW)
 
-### HTTP Requests
+## HTTP Requests Review
 
 - client side goes to site, makes api request --> http request --> serverside runs a code --> response --> back to client side as [{data:results}]
 - what happens if API data base is down?
 
-### Mock Service Worker
+## Mock Service Worker Purpose
 
-- so you create a mock API database that mocks the data base you will actually be using
-- this way if the database is down, your test can still work
+- you create a mock API database that mocks the data base you will actually be using
+  - this way if the database is down, your test can still work
 - mock service worker interrupts the http request, so that the response is sent back from the mock service worker rather than the API
 
-### how to set up MSW
+## How to set up MSW
 
-- import {rest} from 'msw' and {setupServer} from 'msw/node
-- rest is for REST API -> what we are using to communicate with API for now
-- req(request) - to get request data
-- res(response) - mimic api response
-- ctx (context) - mimic the json sent from the response
-  - IN THIS ORDER. variable name does not matter, but order does
+1. import {rest} from 'msw' and {setupServer} from 'msw/node - rest is for REST API -> what we are using to communicate with API for now
+2. set up a const server = setupServer()
+3. use rest.httpsVerb for ex rest.get()
+4. first argument for your verb is api end point (for ex. api's url)
+5. second argument is a call back function () with **three arguments: req, res, ctx** - **req(request)** - to get request data - **res(response)** - mimic api response -> this is a function. It is what we will call. we will give it ctx - **ctx (context)** - mimic the json sent from the response -> uses the same .json() method that our call uses in the api response (not the mock one) - **IN THIS ORDER** variable name does not matter, but order does
+6. return your response that takes your mock json object as argument
+   - for ex res(ctx.json(mockResponse))
+     -when you console log your fetch call, the object you receive is what you want to mimic in your .json() in your msw. You can also use postman or look in the network tab to get your data - for ex: const mockResponse = [{id: 1, pokemon: pikachu}]
+
+### MSW code example
 
 ```
-// 'rest' is the api endpoint that we want to hit
-// use your HTTP verbs so for ex .get
-// in the argument of the verb, we get the api
-// first argument is api endpoint (like a url), then a call back function
-// the call back function auto gets passed 3 arguments: req, res, and ctx
-const server = setupServer(rest.get(`api url`, () => {
-    return
+const server = setupServer(rest.get(`api url`, (req, res, ctx) => {
+    return res(ctx.json(mockResponse))
 }))
 ```
