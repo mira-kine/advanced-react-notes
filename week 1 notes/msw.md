@@ -26,7 +26,7 @@
    - afterAll(() => server.close()) runs after all tests
 8. if you want to check that your function is running, put a console.log in your actual api call back function
 
-### MSW code example
+### MSW code definition
 
 ```
 const server = setupServer(rest.get(`api url`, (req, res, ctx) => {
