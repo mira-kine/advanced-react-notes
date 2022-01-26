@@ -24,6 +24,7 @@
 7. put a **beforeAll(() => {})** and **afterAll(() => {})** before the actual test
    - beforeAll(() => server.listen()) runs before all tests
    - afterAll(() => server.close()) runs after all tests
+8. if you want to check that your function is running, put a console.log in your actual api call back function
 
 ### MSW code example
 
@@ -31,4 +32,11 @@
 const server = setupServer(rest.get(`api url`, (req, res, ctx) => {
     return res(ctx.json(mockResponse))
 }))
+
+beforeAll(() => server.listen())
+afterAll(() => server.close())
 ```
+
+### Cool things Vonta teaches
+
+- if you press p you can choose what test you want to run in the terminal
