@@ -25,6 +25,7 @@
    - beforeAll(() => server.listen()) runs before all tests
    - afterAll(() => server.close()) runs after all tests
 8. if you want to check that your function is running, put a console.log in your actual api call back function
+9. if you don't want it globally, you can use server.use() in your test to use the server to change the response for the test
 
 ### MSW code definition
 
