@@ -16,5 +16,6 @@
   ```
 - as long as you are within a Router, you can still render a Route
 - const { url, path } = useRoutematch()
+
   - you use url for nested links -> it'll give you whatever is in the address bar
   - use path for nested routes -> shows you how it was put together (for ex, what it matches with like /categories/:categoryId)
