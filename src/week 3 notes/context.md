@@ -38,7 +38,7 @@ const EntryProvider = ({ children }) => {
 5. call useContext with the context we want to use (so in this case, EntryContext)
 6. export provider and the custom hook
 7. Then you can wrap whatever components you need to provide context down to using the EntryProvider provider component you created
-8. as a beginner, you can wrap your whole app at the root level with your UserProvider
+8. as a beginner, you can wrap your whole app at the root level with your UserProvider. This <App /> is usually found in index.jsx file
 
 ```
 const useEntries = () => {
@@ -59,4 +59,3 @@ export { EntryProvider, useEntries }
   - so you can use custom hooks when you want to remove duplicated logic from two components
   - they do not share state, they reuse "stateful logic" -> like setting up a subscription and remembering the current value, or wanting to keep entries in a guest book of both user and message, etc.)
 - remember that you can call useState and useEffect many times in one component because they will be completely independent.
--
