@@ -13,6 +13,8 @@
 - Context lets a parent- no matter distance- provide some data to the entire tree inside of it. Goes directly to the components that need it
 - There can be more than one context passed down
 - createContext() creates a new context, match the name with the context you are creating for ex.
+  - itll have Provider and Consumer (we don't use Consumer as much)
+  - Provider value's will hold the state that you want to be passing down to whatever components you will eventually wrap it around
 
 ## **Steps to create context:**
 
