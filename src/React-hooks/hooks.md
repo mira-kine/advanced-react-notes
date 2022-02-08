@@ -16,3 +16,8 @@
 - they only expose certain parts of the total context
 
 ## useMemo
+
+- returns a memoized value
+  - **memoized** technique for improving performance of recursive algo. Rewrites the recursive algo so that answers to problem are found and are _*stored in an array*_
+- useMemo will recompute the memoized value when one of the dependencies has changed, this way it will only render when necessary
+- if no array provided, new value will be computed on every render
