@@ -53,3 +53,36 @@ const useEntries = () => {
 export { EntryProvider, useEntries }
 }
 ```
+
+## Other notes
+
+- you can set up react functional components with const vs functions.
+- for example:
+
+```
+const MyComponent = () => {
+    return (...)
+}
+
+//OR
+
+function MyComponent() {
+    return(...)
+}
+
+// you can also short hand an implicit return if a parenthesis comes right after the arrow, which means it will be returned immediately
+
+const MyComponent = () => (...)
+
+// you can also export a component
+
+export default function MyComponent() {}
+
+//vs
+
+const MyComponent = () => {}
+export default MyComponent
+```
+
+- the difference is in the organization of your code: since your code is read top down, functions will be read before consts. This is called hoisting -> if you want to use them before they are declared, you can
+  use "function", otherwise you can put const before you declare
