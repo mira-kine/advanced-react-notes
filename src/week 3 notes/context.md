@@ -86,3 +86,6 @@ export default MyComponent
 
 - the difference is in the organization of your code: since your code is read top down, functions will be read before consts. This is called hoisting -> if you want to use them before they are declared, you can
   use "function", otherwise you can put const before you declare
+
+- empty array still a truthy, so you should do item.length > 0 instead of just item cause if item is an initial state of [], it'll return true even tho that's not the truthy value you want
+- remember that if you have an option "all", that is also a child
