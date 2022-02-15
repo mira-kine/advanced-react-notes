@@ -36,6 +36,23 @@ export const counterSlice = createSlice({
         },
     },
 })
+<!-- define as action -->
+export const { increment, decrement } = counterSlice.actions;
+<!-- export reducer function from slice -->
+export default counterSlice.reducer
 ```
 
 - side note, += or -= means increment or decrement and then set the new value equal to whatever for ex state.count += 1 means increment by 1 and then set that equal
+
+### Add slice reducer to our store
+
+```
+<!-- import _____ reducer from where your slice is. You can name it what you want but convention would be to call it ____Reducer fr ex. counterReducer-->
+
+export const store = configureStore({
+    reducer: {
+        <!-- name the piece of state and give it the reducer to use -->
+        counter: counterReducer
+    }
+})
+```
