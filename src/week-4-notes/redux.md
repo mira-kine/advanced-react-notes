@@ -46,6 +46,8 @@ export default counterSlice.reducer
 
 ### Add slice reducer to our store
 
+- make sure your provider wraps the component you need
+
 ```
 <!-- import _____ reducer from where your slice is. You can name it what you want but convention would be to call it ____Reducer fr ex. counterReducer-->
 
@@ -56,3 +58,15 @@ export const store = configureStore({
     }
 })
 ```
+
+### Use dispatch and selector in our component
+
+- useSelector hook will grab all the state in our store and set it to a const
+
+```
+const count = useSelector((state) => state.counter.count)
+const dispatch = useDispatch()
+
+```
+
+- then you will dispatch either increment() or decrement() because those are th eonly ones available in your slice
