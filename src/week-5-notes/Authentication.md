@@ -25,3 +25,14 @@
   - for ex. you can destructure {from} from the location.state that's in the Redirect component in the Private Route
   - you can either come from the location.state(location they were at before) OR they can go to login directly - so you can do like const { from } = location.state || { from: { pathname: '/' } }
     history.replace(from.pathname)
+
+## Route render methods
+
+- three Route render methods:
+  - <Route component>
+  - <Route render>
+  - <Route children> function
+- All three render methods have these three route props:
+  - match
+    -location
+  - history
