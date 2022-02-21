@@ -11,3 +11,8 @@
 5. verify it was added
 6. edit the newly added item
    - when you type in a new edit input, you can hit built in selector buttons using curlies for ex '{selectall}{del}Milk`}
+
+### SHopping enhanced deliverable
+
+- adding a header component with shopping items
+  - set up a context provider
