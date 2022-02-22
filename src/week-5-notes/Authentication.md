@@ -30,9 +30,15 @@
 
 - three Route render methods:
   - <Route component>
-  - <Route render>
-  - <Route children> function
+    - Component that will render only when the location matches.
+    - will create a new React element from the given component -> you will create a new component every render, which means that the existing component will unmount and a new component remount instead of an inline rendering, which means that an existing component is updated
+  - <Route render>:
+    - inline rendering: you can pass in the function you will call when the location matches. The render prop function has access to all the route props (match, location, history)
+  - <Route children> function:
+    - sometimes when you need to render whether the location matches or not, you can use the function children prop.
+      - children render propr receives all the same route props, except when the route fails to match the URL then match returns null
+      - this way you can dynamically adjust UI based on whether or not route matches.
 - All three render methods have these three route props:
   - match
-    -location
+  - location
   - history
