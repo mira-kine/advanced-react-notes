@@ -42,3 +42,25 @@
   - match
   - location
   - history
+
+## 2.23.2022
+
+- jest.mock(file name)
+  - the file will be named after the file you are mocking
+  - it will act as a mock file of for ex. your context provider
+- jest.mock will hit the file that you are mocking, whereas msw makes an API call to the mock service worker not the actual API
+
+### controlled and uncontrolled inputs
+
+- const data = new FormData(event.target) => this FormData will take the values and set it to data
+
+  ### FormData() => provides a way to easily construct key,value pairings from forms
+
+- uncontrolled = we don't know what's in the input field in react until you submit the form.
+- controlled = when you put a value={} you are setting the value explicitly
+  - for ex if you set a state const [email, setEmail] = useState('') with an explicit value={email}, you will have a controlled input
+
+### notes for build from scratch
+
+- if you have a prop that does not have an equal sign for ex isSigningUp, then it is a boolean value
+- data goes down, events go up
